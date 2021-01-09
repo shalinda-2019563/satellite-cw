@@ -15,12 +15,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gke-test
+  name: satellite-dev-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gke-test
+      app: satellite-dev
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -29,11 +29,10 @@ spec:
   template:
     metadata:
       labels:
-        app: gke-test
+        app: satellite-dev
     spec:
       containers:
-      - image: satellite
-        imagePullPolicy: Never
+      - image: gcr.io/PROJECT_ID/IMAGE:TAG
         name: satellite
         ports:
         - containerPort: 8080

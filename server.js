@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
-  res.send('Hello k8! v10000');
+  res.send('Hello Shalinda....');
 });
 
 
@@ -33,7 +33,7 @@ app.get('/shalinda', (req, res) => {
     .catch(function (err) {
       console.log("SOMETHING DONE GOOFED");
       console.log(err)
-      res.send('CONNECTED ERROR Response ');
+      res.send(err);
     });
 
 

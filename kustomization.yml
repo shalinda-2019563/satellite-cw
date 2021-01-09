@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - deployment.yml
 - service.yml
-- mysql-services.yaml
+- mysql-configmap.yaml
 - mysql-services.yaml
 - mysql-statefulset.yaml
 - satellite-namespace.yml

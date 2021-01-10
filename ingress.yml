@@ -13,4 +13,4 @@ spec:
       - path: /sat-2/*
         backend:
           serviceName: satellite-dev-svc-2
-          servicePort: 80
+          servicePort: 80 

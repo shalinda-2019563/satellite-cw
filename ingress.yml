@@ -1,15 +1,8 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: satellite-dev-ingress
-  annotations:
-    # use the shared ingress-nginx
-    kubernetes.io/ingress.class: "nginx"
+  name: basic-ingress
 spec:
-  rules:
-    http:
-      paths:
-      - path: /satellite-one
-        backend:
-          serviceName: satellite-dev-svc
-          servicePort: 80
+  backend:
+    serviceName: satellite-dev-svc
+    servicePort: 80          

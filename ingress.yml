@@ -12,5 +12,5 @@ spec:
       paths:
       - path: /satellite-one
         backend:
-          serviceName: satellite-dev-svc
+          serviceName: satellite-dev
           servicePort: 80

@@ -7,7 +7,9 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
-  - http:
+  - loadBalancerIP: "34.123.198.183"
+    externalTrafficPolicy: "Local"
+    http:
       paths:
       - backend:
           serviceName: satellite-dev

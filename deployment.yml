@@ -15,12 +15,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: satellite-dev
+  name: satellite-prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: satellite-dev
+      app: satellite-prod
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -29,7 +29,7 @@ spec:
   template:
     metadata:
       labels:
-        app: satellite-dev
+        app: satellite-prod
     spec:
       containers:
       - image: gcr.io/PROJECT_ID/IMAGE:TAG

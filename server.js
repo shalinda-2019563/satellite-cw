@@ -7,7 +7,6 @@ const mysql = require('mysql2/promise');
 // Constants
 const PORT = 8080;
 
-// App
 const app = express();
 
 app.use(bodyParser.json())

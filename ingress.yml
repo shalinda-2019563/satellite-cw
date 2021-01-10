@@ -2,16 +2,7 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: satellite-dev-ingress
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
-  rules:
-  - loadBalancerIP: "34.123.198.183"
-    externalTrafficPolicy: "Local"
-    http:
-      paths:
-      - backend:
-          serviceName: satellite-dev
-          servicePort: 80
-        path: /satellite-one
+  backend:
+    serviceName: satellite-dev
+    servicePort: 80

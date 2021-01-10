@@ -13,12 +13,12 @@ const app = express();
 app.use(bodyParser.json())
 
 
-app.get('/sat-1', (req, res) => {
+app.get('/:sat/', (req, res) => {
   res.send('Welcome to Satellite 1');
 });
 
 
-app.get('/sat-1/position', (req, res) => {
+app.get('/:sat/position', (req, res) => {
 
   //Kubernetis
   //   var sequelize = new Sequelize('my_db', 'root', '', {

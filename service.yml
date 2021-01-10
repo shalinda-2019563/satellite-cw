@@ -23,3 +23,16 @@ spec:
       targetPort: 8080
   selector:
     app: satellite-dev
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: satellite-dev-svc-2
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: satellite-dev-2

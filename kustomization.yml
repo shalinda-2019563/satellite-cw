@@ -7,4 +7,4 @@ resources:
 - mysql-services.yaml
 - mysql-statefulset.yaml
 - satellite-namespace.yml
-namespace: satellite-prod-ns
+namespace: satellite-dev-ns

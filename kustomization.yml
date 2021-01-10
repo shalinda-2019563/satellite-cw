@@ -6,3 +6,5 @@ resources:
 - mysql-configmap.yaml
 - mysql-services.yaml
 - mysql-statefulset.yaml
+- satellite-namespace.yml
+namespace: satellite-dev-ns

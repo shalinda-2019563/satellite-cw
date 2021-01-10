@@ -3,6 +3,14 @@ kind: Ingress
 metadata:
   name: basic-ingress
 spec:
-  backend:
-    serviceName: satellite-dev-svc
-    servicePort: 80          
+  rules:
+  - http:
+      paths:
+      - path: /sat-2
+        backend:
+          serviceName: satellite-dev-svc
+          servicePort: 80
+      - path: /sat-1
+        backend:
+          serviceName: satellite-dev-svc
+          servicePort: 80

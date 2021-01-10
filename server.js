@@ -13,8 +13,8 @@ const app = express();
 app.use(bodyParser.json())
 
 
-app.get('/sasat-1/t-1', (req, res) => {
-  res.send('Latest is the greatest!');
+app.get('/sat-1', (req, res) => {
+  res.send('Welcome to Satellite 1');
 });
 
 

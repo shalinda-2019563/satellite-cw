@@ -2,9 +2,9 @@
   "apiVersion": "v1",
   "kind": "Namespace",
   "metadata": {
-    "name": "satellite-dev-ns",
+    "name": "satellite-prod-ns",
     "labels": {
-      "name": "satellite-dev-ns"
+      "name": "satellite-prod-ns"
     }
   }
 }

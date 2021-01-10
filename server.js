@@ -21,86 +21,86 @@ app.get('/sat-1/', (req, res) => {
 
 
 
-// app.get('/sat-1/position', (req, res) => {
+app.get('/sat-1/position', (req, res) => {
 
-//   //Kubernetis
-//   //   var sequelize = new Sequelize('my_db', 'root', '', {
-//   //     host: 'mysql',
-//   //     port: 3306,
-//   //     dialect: 'mysql'
-//   // });
+  //Kubernetis
+  //   var sequelize = new Sequelize('my_db', 'root', '', {
+  //     host: 'mysql',
+  //     port: 3306,
+  //     dialect: 'mysql'
+  // });
 
-//   mysql.createConnection({
-//     host: 'mysql',
-//     port: 3306,
-//     user: 'root',
-//     password: ''
-//   }).then((connection) => {
-
-
-//     connection.query('CREATE DATABASE IF NOT EXISTS satellite_db;').then(() => {
-//       connection.query('CREATE TABLE IF NOT EXISTS `satellite_db`.`satellites` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(45) NOT NULL , `longitude` VARCHAR(45) NOT NULL , PRIMARY KEY (`id`));').then(() => {
-
-//         const lat = Math.round((Math.random() * 360 - 180) * 1000) / 1000
-//         const long = Math.round((Math.random() * 360 - 180) * 1000) / 1000
-
-//         connection.query(`INSERT INTO satellite_db.satellites (latitude,longitude) VALUES(${lat},${long});`).then(() => {
+  mysql.createConnection({
+    host: 'mysql',
+    port: 3306,
+    user: 'root',
+    password: ''
+  }).then((connection) => {
 
 
+    connection.query('CREATE DATABASE IF NOT EXISTS satellite_db;').then(() => {
+      connection.query('CREATE TABLE IF NOT EXISTS `satellite_db`.`satellites` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(45) NOT NULL , `longitude` VARCHAR(45) NOT NULL , PRIMARY KEY (`id`));').then(() => {
 
-//           res.send(`<h1>Satellite is in position of latitude ${lat} and longitude of ${long} </h1>`);
+        const lat = Math.round((Math.random() * 360 - 180) * 1000) / 1000
+        const long = Math.round((Math.random() * 360 - 180) * 1000) / 1000
 
-//           //Insert Query
-//         }).catch(function (err) {
-//           console.log("TABLE Insert FAILED");
-//           console.log(err)
-//           res.send(err);
-//         });
-
-
-//         //Table
-//       }).catch(function (err) {
-//         console.log("TABLE CREATION FAILED");
-//         console.log(err)
-//         res.send(err);
-//       });
-
-//       //Database
-//     }).catch(function (err) {
-//       console.log("DATABASE CREATION FAILED");
-//       console.log(err)
-//       res.send(err);
-//     });
-
-//   })
+        connection.query(`INSERT INTO satellite_db.satellites (latitude,longitude) VALUES(${lat},${long});`).then(() => {
 
 
 
+          res.send(`<h1>Satellite is in position of latitude ${lat} and longitude of ${long} </h1>`);
 
-//   // sequelize.authenticate().then(function () {
-
-//   //   console.log("CONNECTED Log! ");
-//   //   res.send('CONNECTED Response ! ');
-//   // })
-//   //   .catch(function (err) {
-//   //     console.log("SOMETHING DONE GOOFED");
-//   //     console.log(err)
-//   //     res.send(err);
-//   //   });
+          //Insert Query
+        }).catch(function (err) {
+          console.log("TABLE Insert FAILED");
+          console.log(err)
+          res.send(err);
+        });
 
 
-// });
+        //Table
+      }).catch(function (err) {
+        console.log("TABLE CREATION FAILED");
+        console.log(err)
+        res.send(err);
+      });
 
-// app.get('/test', (req, res) => {
-//   const kc = new k8s.KubeConfig();
-//   kc.loadFromDefault();
+      //Database
+    }).catch(function (err) {
+      console.log("DATABASE CREATION FAILED");
+      console.log(err)
+      res.send(err);
+    });
 
-//   const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
+  })
 
-//   k8sApi.listNamespacedPod('default').then((res) => {
-//     console.log(res.body);
-//   });
-// });
+
+
+
+  // sequelize.authenticate().then(function () {
+
+  //   console.log("CONNECTED Log! ");
+  //   res.send('CONNECTED Response ! ');
+  // })
+  //   .catch(function (err) {
+  //     console.log("SOMETHING DONE GOOFED");
+  //     console.log(err)
+  //     res.send(err);
+  //   });
+
+
+});
+
+app.get('/test', (req, res) => {
+  const kc = new k8s.KubeConfig();
+  kc.loadFromDefault();
+
+  const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
+
+  k8sApi.listNamespacedPod('default').then((res) => {
+    console.log(res.body);
+  });
+});
 
 
 

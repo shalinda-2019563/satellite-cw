@@ -4,5 +4,5 @@ metadata:
   name: basic-ingress
 spec:
   backend:
-    serviceName: satellite-dev
+    serviceName: satellite-dev-svc
     servicePort: 80   

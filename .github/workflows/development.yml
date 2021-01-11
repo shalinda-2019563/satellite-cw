@@ -3,12 +3,12 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-    - development
+    - development-test
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}   # Add your cluster name here.
-  GKE_ZONE: ${{ secrets.GKE_ZONE}}  # Add your cluster zone here.
-  DEPLOYMENT_NAME: satellite-dev # Add your deployment name here.
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
+  GKE_ZONE: ${{ secrets.GKE_ZONE}} 
+  DEPLOYMENT_NAME: satellite-dev 
   IMAGE: satellite
   REGISTRY_HOSTNAME: gcr.io  
  
@@ -31,7 +31,7 @@ jobs:
     - run: |-
         gcloud --quiet auth configure-docker
       
-    # Get the GKE credentials so we can deploy to the cluster
+    # Get the GKE credentials to deploy to the cluster
     - uses: google-github-actions/get-gke-credentials@v0.2.1
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}

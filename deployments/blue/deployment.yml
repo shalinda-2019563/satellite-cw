@@ -37,7 +37,7 @@ spec:
       - name: demok8
         image: gcr.io/PROJECT_ID/IMAGE:TAG
         ports:
-        - containerPort: 8087
+        - containerPort: 8080
         readinessProbe:
           httpGet:
              path: /
@@ -55,4 +55,4 @@ spec:
           initialDelaySeconds: 15
           periodSeconds: 30
           successThreshold: 1
-          timeoutSeconds: 1        
+          timeoutSeconds: 1 

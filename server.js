@@ -79,20 +79,6 @@ app.get('/sat-1/position', (req, res) => {
   })
 
 
-
-
-  // sequelize.authenticate().then(function () {
-
-  //   console.log("CONNECTED Log! ");
-  //   res.send('CONNECTED Response ! ');
-  // })
-  //   .catch(function (err) {
-  //     console.log("SOMETHING DONE GOOFED");
-  //     console.log(err)
-  //     res.send(err);
-  //   });
-
-
 });
 
 app.get('/test', (req, res) => {

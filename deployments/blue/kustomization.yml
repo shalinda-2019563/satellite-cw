@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
 - deployment.yml
 - service.yml
-- satellite-namespace.yml
-namespace: satellite-dev-ns
+- production-namespace.yml
+namespace: satellite-prod-ns

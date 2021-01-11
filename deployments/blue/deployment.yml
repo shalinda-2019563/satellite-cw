@@ -15,12 +15,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demok8-blue
+  name: satellite-prod-blue
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demok8-v2
+      app: satellite-prod-v2
       track: blue
   strategy:
     rollingUpdate:
@@ -30,11 +30,11 @@ spec:
   template:
     metadata:
       labels:
-        app: demok8-v2
+        app: satellite-prod-v2
         track: blue
     spec:
       containers:
-      - name: demok8
+      - name: satellite
         image: gcr.io/PROJECT_ID/IMAGE:TAG
         ports:
         - containerPort: 8080

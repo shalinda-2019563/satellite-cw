@@ -16,10 +16,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/sat-1/', (req, res) => {
-  res.send('Hello satellite 1');
+   res.json({name:'Hello satellite 1'});
 });
 app.get('/sat-2/', (req, res) => {
-  res.send('Hello satellite 2');
+  res.json({name:'Hello satellite 2'});
 });
 
 

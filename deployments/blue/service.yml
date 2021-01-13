@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: satellite-prod-svc
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 80
       targetPort: 8080
@@ -15,7 +15,7 @@ kind: Service
 metadata:
   name: satellite-prod-svc-2
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 80
       targetPort: 8080

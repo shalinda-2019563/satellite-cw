@@ -3,11 +3,11 @@ name: Build and Deploy to GKE
 on:
   push:
     branches:
-    - production
+    - production-test
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER:  ${{ secrets.GKE_CLUSTER_NAME }}   # TODO: update to cluster name
+  GKE_CLUSTER:  ${{ secrets.GKE_CLUSTER_NAME_PRODUCTION }}   # TODO: update to cluster name
   GKE_ZONE: ${{ secrets.GKE_ZONE}}   # TODO: update to cluster zone
   DEPLOYMENT_NAME: satellite-prod # TODO: update to deployment name
   IMAGE: satellite

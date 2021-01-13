@@ -12,7 +12,7 @@ env:
   DEPLOYMENT_NAME: satellite-prod # TODO: update to deployment name
   IMAGE: satellite
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-  RELEASE: blue
+  RELEASE: green
 
 jobs:
   setup-build-publish-deploy:

@@ -6,5 +6,6 @@ resources:
 - mysql-configmap.yml
 - mysql-services.yml
 - mysql-statefulset.yml
+- ingress.yml
 - production-namespace.yml
 namespace: satellite-prod-ns

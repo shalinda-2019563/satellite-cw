@@ -12,14 +12,14 @@ const app = express();
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-  res.send('Hello satellite 1');
+  res.send('Hello satellite');
 });
 
 app.get('/sat-1/', (req, res) => {
-   res.json({name:'Hello satellite 1'});
+   res.json({name:'Hello world satellite 1'});
 });
 app.get('/sat-2/', (req, res) => {
-  res.json({name:'Hello satellite 2'});
+  res.json({name:'Hello world satellite 2'});
 });
 
 

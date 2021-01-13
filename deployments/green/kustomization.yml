@@ -3,8 +3,5 @@ kind: Kustomization
 resources:
 - deployment.yml
 - service.yml
-- mysql-configmap.yml
-- mysql-services.yml
-- mysql-statefulset.yml
 - production-namespace.yml
 namespace: satellite-prod-ns

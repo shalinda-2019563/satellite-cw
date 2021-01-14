@@ -130,7 +130,7 @@ app.get('/sat-1/position', (req, res) => {
 
 
     connection.query('CREATE DATABASE IF NOT EXISTS satellite_db;').then(() => {
-      connection.query('CREATE TABLE IF NOT EXISTS `satellite_db`.`satellites` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(45) NOT NULL , `longitude` VARCHAR(45) NOT NULL , PRIMARY KEY (`id`));').then(() => {
+      connection.query('CREATE TABLE IF NOT EXISTS `satellite_db`.`satellites` ( `id` INT NOT NULL AUTO_INCREMENT ,`satellite_id` INT NOT NULL , `latitude` VARCHAR(45) NOT NULL , `longitude` VARCHAR(45) NOT NULL , PRIMARY KEY (`id`));').then(() => {
 
         connection.query(`SELECT * FROM satellite_db.satellites WHERE satellite_id=1;`, null, { raw: true, type: QueryTypes.SELECT }).then(function (data) {
 
@@ -181,7 +181,7 @@ app.get('/sat-2/position', (req, res) => {
 
 
     connection.query('CREATE DATABASE IF NOT EXISTS satellite_db;').then(() => {
-      connection.query('CREATE TABLE IF NOT EXISTS `satellite_db`.`satellites` ( `id` INT NOT NULL AUTO_INCREMENT , `latitude` VARCHAR(45) NOT NULL , `longitude` VARCHAR(45) NOT NULL , PRIMARY KEY (`id`));').then(() => {
+      connection.query('CREATE TABLE IF NOT EXISTS `satellite_db`.`satellites` ( `id` INT NOT NULL AUTO_INCREMENT ,`satellite_id` INT NOT NULL , `latitude` VARCHAR(45) NOT NULL , `longitude` VARCHAR(45) NOT NULL , PRIMARY KEY (`id`));').then(() => {
 
         connection.query(`SELECT * FROM satellite_db.satellites WHERE satellite_id=2;`, null, { raw: true, type: QueryTypes.SELECT }).then(function (data) {
 

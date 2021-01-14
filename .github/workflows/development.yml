@@ -6,7 +6,7 @@ on:
     - development
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME }}
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER_NAME_DEVELOPMENT }}
   GKE_ZONE: ${{ secrets.GKE_ZONE}} 
   DEPLOYMENT_NAME: satellite-dev 
   IMAGE: satellite

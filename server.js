@@ -16,10 +16,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/sat-1/', (req, res) => {
-  res.json({ name: 'Signal from satellite 1' });
+  res.json({ data: 'Signal from satellite 1' });
 });
 app.get('/sat-2/', (req, res) => {
-  res.json({ name: 'Signal from satellite 2' });
+  res.json({ data: 'Signal from satellite 2' });
 });
 
 app.get('/sat-1/position/add', (req, res) => {
@@ -40,7 +40,7 @@ app.get('/sat-1/position/add', (req, res) => {
 
         connection.query(`INSERT INTO satellite_db.satellites (satellite_id,latitude,longitude) VALUES(1,${lat},${long});`).then(() => {
 
-          res.json({ name: 'Satellite position succesfully added' });
+          res.json({ data: 'Satellite position succesfully added' });
 
           //Insert Query
         }).catch(function (err) {
@@ -88,7 +88,7 @@ app.get('/sat-2/position/add', (req, res) => {
 
         connection.query(`INSERT INTO satellite_db.satellites (satellite_id,latitude,longitude) VALUES(2,${lat},${long});`).then(() => {
 
-          res.json({ name: 'Satellite position succesfully added' });
+          res.json({ data: 'Satellite position succesfully added' });
 
           //Insert Query
         }).catch(function (err) {
@@ -140,7 +140,7 @@ app.get('/sat-1/position', (req, res) => {
             satellites.push(item)
           });
 
-          res.json({ name: satellites});
+          res.json({ data: satellites});
       
           //Insert Query
         }).catch(function (err) {
@@ -191,7 +191,7 @@ app.get('/sat-2/position', (req, res) => {
             satellites.push(item)
           });
 
-          res.json({ name: satellites});
+          res.json({ data: satellites});
           //Insert Query
         }).catch(function (err) {
           console.log("TABLE Insert FAILED");

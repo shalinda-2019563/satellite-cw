@@ -4,7 +4,6 @@ const k8s = require('@kubernetes/client-node');
 const { Sequelize, QueryTypes } = require('sequelize');
 const mysql = require('mysql2/promise');
 
-// Constants
 const PORT = 8080;
 
 const app = express();

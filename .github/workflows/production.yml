@@ -85,15 +85,7 @@ jobs:
     # If false means that blue needs to take 100% of the traffic
     - name: Check if green release is present or not
       run: echo "IS_GREEN_DEPLOYED=$(if [ "$(kubectl get pod -l app=satellite-prod-v1  -o jsonpath='{.items}')" = "[]" ]; then echo "false"; else echo "true"; fi)" >> $GITHUB_ENV
-
-    # Switch traffic for no green release 
-    - name: Create blue release and modify traffic weight to 100% for blue if IS_GREEN_DEPLOYED=false
-      if: ${{ env.RELEASE == 'blue' && env.IS_GREEN_DEPLOYED == 'false' }}
-      working-directory: cd ./deployments//blue/
-      run: |-
-        echo "Switched to `pwd` directory"
-        ${BIN_FOLDER}/./kustomize build . | sed 's/weight: 20/weight: 100/' | sed 's/weight: 80/weight: 0/' | kubectl apply -f -
-        echo "Switched 100% of traffic to blue" 
+      
     # Switch traffic for regular releases
     - name: Create blue/green release and modify traffic weight
       if: ${{ env.IS_GREEN_DEPLOYED == 'true' }}

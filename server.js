@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-  res.send('Hello satellite');
+  res.send('Hello satellite world');
 });
 
 app.get('/sat-1/', (req, res) => {

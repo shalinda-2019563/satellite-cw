@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/sat-1/', (req, res) => {
-  res.json({ data: 'Signal from satellite 1' });
+  res.json({ data: 'Satellite 1 is healthy' });
 });
 app.get('/sat-2/', (req, res) => {
   res.json({ data: 'Signal from satellite 2' });
